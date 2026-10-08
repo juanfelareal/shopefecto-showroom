@@ -184,11 +184,13 @@
             .extras { grid-template-columns: 1fr 1fr; }
             .devices { grid-template-columns: 1fr 1fr; }
             .devices .dev.web { grid-column: 1 / -1; }
-            .demo-frame { width: 100%; left: 0; transform: none; }
+            .demo-frame { width: min(270px, 78vw); left: 0; transform: none; margin: 8px auto 0; border-radius: 30px; padding: 7px; }
+            .demo-frame img { border-radius: 24px; }
             .demo-frame iframe { display: none; }
             .demo-frame img { display: block; }
-            .frames-strip { flex-wrap: wrap; justify-content: center; }
-            .frames-strip img { height: 64px; }
+            .frames-strip { flex-wrap: nowrap; justify-content: space-between; padding: 14px 12px 10px; }
+            .frames-strip img { height: 74px; }
+            .frames-strip img:nth-child(n+7) { display: none; }
             .need { grid-template-columns: 26px 1fr; }
             .need-d { grid-column: 2; justify-self: start; }
             .inv-row { grid-template-columns: 1fr; gap: 4px; }
@@ -251,11 +253,11 @@
             <h2>Ya lo probamos con AKIRA</h2>
             <p>Tomamos los 170 frames del Look 01, les quitamos el fondo, los optimizamos y los conectamos al visor. Así se va a ver cada uno de los 26 personajes. La demo de abajo funciona: pueden pasar de un look a otro, girar a <span class="brand">AKIRA</span>, abrir la ficha de una prenda y cambiar a la tienda internacional en inglés y dólares.</p>
             <div class="demo-frame">
-                <iframe id="demoFrame" title="Demo del showroom Shopefecto" data-src="demo/?embed&v=1791487922" loading="lazy"></iframe>
-                <img src="cap-web-showroom.jpg" alt="Showroom Shopefecto en computador">
+                <iframe id="demoFrame" title="Demo del showroom Shopefecto" data-src="demo/?embed&v=1791488107" loading="lazy"></iframe>
+                <picture><source media="(max-width: 720px)" srcset="cap-m-showroom.jpg?v=1791488107"><img src="cap-web-showroom.jpg?v=1791488107" alt="Showroom Shopefecto"></picture>
             </div>
             <div class="demo-actions">
-                <a class="btn" href="demo/?v=1791487922" target="_blank" rel="noopener">Abrir la demo completa ↗</a>
+                <a class="btn" href="demo/?v=1791488107" target="_blank" rel="noopener">Abrir la demo completa ↗</a>
                 <span class="demo-tip">Los otros 25 personajes aparecen como siluetas hasta que lleguen sus frames. Precios de ejemplo.</span>
             </div>
         </section>
@@ -265,9 +267,9 @@
             <h2>Web y mobile</h2>
             <p>La mayoría va a llegar desde Instagram, así que el diseño parte del celular: el carrusel se desliza con el dedo y la compra se hace desde una hoja que sube desde abajo.</p>
             <div class="devices">
-                <figure class="dev web"><div class="shot"><img src="cap-web-ficha.jpg" alt="Ficha de producto en computador" loading="lazy"></div><figcaption>Ficha de pieza · computador</figcaption></figure>
-                <figure class="dev phone"><div class="shot"><img src="cap-m-showroom.jpg" alt="Showroom en celular" loading="lazy"></div><figcaption>Showroom</figcaption></figure>
-                <figure class="dev phone"><div class="shot"><img src="cap-m-bag.jpg" alt="Bolsa internacional en celular" loading="lazy"></div><figcaption>Bolsa en USD</figcaption></figure>
+                <figure class="dev web"><div class="shot"><img src="cap-web-ficha.jpg?v=1791488107" alt="Ficha de producto en computador" loading="lazy"></div><figcaption>Ficha de pieza · computador</figcaption></figure>
+                <figure class="dev phone"><div class="shot"><img src="cap-m-showroom.jpg?v=1791488107" alt="Showroom en celular" loading="lazy"></div><figcaption>Showroom</figcaption></figure>
+                <figure class="dev phone"><div class="shot"><img src="cap-m-bag.jpg?v=1791488107" alt="Bolsa internacional en celular" loading="lazy"></div><figcaption>Bolsa en USD</figcaption></figure>
             </div>
         </section>
 
