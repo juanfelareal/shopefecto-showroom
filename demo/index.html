@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<title>EFE Showroom</title>
+<title>Shopefecto Showroom</title>
 <meta name="description" content="Prototipo funcional del showroom EFE Runway 2026: looks, giro 360°, compra por pieza en preventa, Colombia e internacional.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -33,7 +33,7 @@ img{display:block;max-width:100%}
 .intro.gone{opacity:0;visibility:hidden}
 .intro::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 50% 42%,rgba(201,169,106,.16),transparent 70%);pointer-events:none}
 .intro .eyebrow{color:#a9a294}
-.intro img{width:min(246px,60vw);filter:drop-shadow(0 18px 40px rgba(201,169,106,.25))}
+.intro img{width:min(170px,44vw);filter:drop-shadow(0 18px 40px rgba(201,169,106,.25))}
 .intro h1{font-weight:300;font-size:clamp(22px,3vw,30px);letter-spacing:-.01em;margin:0;max-width:560px;line-height:1.25}
 .intro .markets{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-top:6px}
 .intro .mk{border:1px solid rgba(244,239,230,.25);border-radius:999px;padding:14px 22px;font-size:13px;letter-spacing:.06em;display:flex;gap:10px;align-items:center;transition:.25s}
@@ -48,7 +48,7 @@ img{display:block;max-width:100%}
 .top .r{justify-content:flex-end}
 .tbtn{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;min-height:44px;font-weight:500}
 .tbtn:hover{color:var(--gold)}
-.logo{height:26px;width:auto}
+.logo{height:42px;width:auto}
 .pill-sw{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;background:var(--paper)}
 .pill-sw button{font-size:10.5px;letter-spacing:.1em;padding:6px 10px;white-space:nowrap;border-radius:999px;font-weight:600;color:var(--muted)}
 .pill-sw button[aria-pressed=true]{background:var(--ink);color:var(--paper)}
@@ -68,6 +68,8 @@ img{display:block;max-width:100%}
 #cast.dragging .figure{transition:transform .08s linear,opacity .3s}
 .figure .photo{transition:filter .9s ease}
 .figure.side .photo,.figure.far .photo{filter:saturate(.75) brightness(1.02)}
+.figure .photo.ph{filter:brightness(0)!important;opacity:.085}
+.figure.hero .photo.ph{opacity:.13}
 .hss{position:absolute;inset:0;opacity:0;transition:opacity .45s ease .45s;pointer-events:none}
 .hss.in{opacity:1}
 .figure.moving .hss{opacity:0;transition-delay:0s;transition-duration:.15s}
@@ -333,7 +335,7 @@ dialog.drawer.left[open]{animation:slideL .45s var(--ease)}
   .top{padding:0 12px;height:60px}
   .top .l,.top .r{gap:6px}
   .hide-m{display:none!important}
-  .logo{height:21px}
+  .logo{height:34px}
   .mast{padding:0 16px}
   .mast .side{display:none}
   .figure{--gap:clamp(96px,30vw,160px)}
@@ -392,7 +394,7 @@ dialog.drawer.left[open]{animation:slideL .45s var(--ease)}
 <!-- Intro / selector de mercado -->
 <section class="intro" id="intro" aria-label="Bienvenida" data-note="A · Landing de entrada + selector de mercado">
   <span class="eyebrow">Runway / 2026</span>
-  <img src="assets/logo.png" alt="EFE">
+  <img src="assets/logo-shopefecto.png" alt="Shopefecto">
   <h1 data-t="introH">La colección del desfile, pieza por pieza.</h1>
   <p class="geo" id="geo"></p>
   <div class="markets">
@@ -408,7 +410,7 @@ dialog.drawer.left[open]{animation:slideL .45s var(--ease)}
     <button class="tbtn" data-act="menu" aria-label="Menú"><svg class="icon"><use href="#i-menu"/></svg><span class="hide-m" data-t="menu">Menú</span></button>
     <button class="tbtn hide-m" data-act="goto" data-to="coleccion" data-t="collection">Colección</button>
   </div>
-  <a href="#" data-act="home" aria-label="EFE inicio"><img class="logo" src="assets/logo.png" alt="EFE"></a>
+  <a href="#" data-act="home" aria-label="Shopefecto inicio"><img class="logo" src="assets/logo-shopefecto.png" alt="Shopefecto"></a>
   <div class="r">
     <div class="pill-sw hide-m" role="group" aria-label="Mercado" data-note="B · Mercados CO / INTL">
       <button data-act="market" data-market="CO">CO · COP</button>
@@ -474,7 +476,7 @@ dialog.drawer.left[open]{animation:slideL .45s var(--ease)}
         <span class="lbl" data-t="popLbl">Render del inflable · lo entrega el estudio</span>
       </div>
       <div>
-        <span class="eyebrow">EFE Pop-up</span>
+        <span class="eyebrow">Shopefecto Pop-up</span>
         <h3 style="margin-bottom:16px" data-t="popTitle">Una tienda que se infla donde menos la esperas.</h3>
         <p class="lede" data-t="popText">Nuestra tienda itinerante e inflable recorre la ciudad. Pruébate la colección en persona, ve las piezas del desfile y lleva tu preventa.</p>
         <ul class="stops" id="stops"></ul>
@@ -487,19 +489,19 @@ dialog.drawer.left[open]{animation:slideL .45s var(--ease)}
     <div class="collectives">
       <a href="#" data-act="noop"><b>Estudio 3D</b><span data-t="coll1">Diseño, render y dirección visual detrás de cada look.</span><i data-t="visit">Visitar <svg class="icon" style="width:14px;height:14px"><use href="#i-ext"/></svg></i></a>
       <a href="#" data-act="noop"><b>Música</b><span data-t="coll2">El sonido del desfile y los proyectos musicales del colectivo.</span><i data-t="visit">Visitar <svg class="icon" style="width:14px;height:14px"><use href="#i-ext"/></svg></i></a>
-      <a href="#" data-act="noop"><b>shopefecto.com</b><span data-t="coll3">La tienda de siempre: colecciones disponibles con entrega inmediata en Colombia.</span><i data-t="visit">Visitar <svg class="icon" style="width:14px;height:14px"><use href="#i-ext"/></svg></i></a>
+      <a href="#" data-act="noop"><b>Colecciones anteriores</b><span data-t="coll3">La tienda de siempre: colecciones disponibles con entrega inmediata en Colombia.</span><i data-t="visit">Visitar <svg class="icon" style="width:14px;height:14px"><use href="#i-ext"/></svg></i></a>
     </div>
   </section>
 </main>
 
 <footer data-note="B · Footer: políticas, legales, medios de pago">
   <div class="foot">
-    <div><img src="assets/logo.png" alt="EFE" style="height:30px;margin-bottom:18px"><p data-t="footP">Colección Runway 2026. Todas las piezas se venden en preventa y se producen bajo pedido.</p></div>
+    <div><img src="assets/logo-shopefecto.png" alt="Shopefecto" style="height:56px;margin-bottom:14px"><p data-t="footP">Colección Runway 2026. Todas las piezas se venden en preventa y se producen bajo pedido.</p></div>
     <div><h5 data-t="shop">Tienda</h5><button data-act="goto" data-to="showroom">Looks</button><button data-act="goto" data-to="coleccion" data-t="collection">Colección</button><button data-act="goto" data-to="popup">Pop-up</button><button data-act="goto" data-to="colectivos" data-t="collectives">Colectivos</button></div>
     <div><h5 data-t="help">Ayuda</h5><button data-act="policy" data-p="preorder" data-t="pPre">Preventa</button><button data-act="policy" data-p="shipping" data-t="pShip">Envíos</button><button data-act="policy" data-p="returns" data-t="pRet">Cambios y devoluciones</button><button data-act="policy" data-p="sizes" data-t="pSize">Guía de tallas</button></div>
     <div><h5>Legal</h5><button data-act="policy" data-p="terms" data-t="pTerms">Términos y condiciones</button><button data-act="policy" data-p="privacy" data-t="pPriv">Privacidad</button><a href="#" data-act="noop">Instagram</a></div>
   </div>
-  <div class="legal"><span>© 2026 EFE</span><div class="pay" id="payIcons"></div></div>
+  <div class="legal"><span>© 2026 Shopefecto</span><div class="pay" id="payIcons"></div></div>
 </footer>
 
 <button class="notes-fab" data-act="roadmap" aria-label="Notas del prototipo"><i>?</i><span>¿La logramos? · Notas</span></button>
@@ -529,54 +531,10 @@ const LOOKS=[
    ['ak-gloves','accessories',290,73,52,['S/M','L/XL'],'Guantes de Cuero Negro','Black Leather Gloves','Napa suave con puño ajustado.','Soft nappa with a fitted cuff.'],
    ['ak-pants','pants',1890,34,72,['S','M','L','XL'],"Pantalón Flare 'Bolt'","'Bolt' Flared Trousers",'Cuero negro de bota acampanada con rayos en contraste y abertura en el ruedo.','Black leather flare with contrast bolts and a split hem.'],
    ['ak-boots','footwear',1250,28,94,['39','40','41','42','43','44'],"Botas 'EFE Titan'","'EFE Titan' Boots",'Bota de combate de doble suela dentada.','Double lug-sole combat boot.']]},
- {id:2,name:'Noir Tailoring',img:M('jaQTN9X98wA'),ar:472/1400,
-  items:[
-   ['l1-knit','tops',420,62,25,['S','M','L','XL'],'Suéter Merino Noir','Noir Merino Knit','Tejido fino de merino en negro profundo, cuello redondo y caída limpia.','Fine-gauge merino in deep black, crew neck, clean drape.'],
-   ['l1-pants','pants',480,58,66,['28','30','32','34','36'],'Pantalón Sastre Recto','Straight Tailored Trousers','Lana fría con pinza frontal y bota recta.','Tropical wool with a front pleat and straight leg.'],
-   ['l1-shoes','footwear',560,66,96,['39','40','41','42','43','44'],'Derby de Cuero Negro','Black Leather Derby','Cuero pulido con suela de goma ligera.','Polished leather with a light rubber sole.']]},
- {id:3,name:'Rosa Volumen',img:M('4ywQOCAl2XI'),ar:528/1400,
-  items:[
-   ['l2-hoodie','tops',320,48,30,['XS','S','M','L'],'Hoodie Oversized Rosa','Oversized Pink Hoodie','Felpa pesada de 450 gsm, capucha doble y hombro caído.','450 gsm heavyweight fleece, double hood, dropped shoulder.'],
-   ['l2-pants','pants',290,40,68,['XS','S','M','L'],'Jogger Wide Rosa','Wide Pink Jogger','Pierna amplia con cordón y ruedo abierto.','Wide leg with drawcord and open hem.'],
-   ['l2-shoes','footwear',380,30,97,['35','36','37','38','39','40'],'Sneaker Blanco Low','White Low Sneaker','Cuero blanco y suela vulcanizada.','White leather, vulcanised sole.']]},
- {id:4,name:'Gris Calma',img:M('nS1kxf6nP24'),ar:430/1400,
-  items:[
-   ['l3-knit','tops',360,54,23,['S','M','L','XL'],'Cuello Alto Gris Perla','Pearl Grey Mock Neck','Punto acanalado ajustado en gris perla.','Close-fitting ribbed knit in pearl grey.'],
-   ['l3-pants','pants',310,50,64,['S','M','L','XL'],'Jogger Crudo Bordado','Embroidered Ecru Jogger','Algodón cepillado con bordado EFE en la pierna.','Brushed cotton with EFE embroidery on the leg.'],
-   ['l3-shoes','footwear',450,38,96,['39','40','41','42','43','44'],'Runner Arena','Sand Runner','Malla técnica y gamuza en tonos arena.','Technical mesh and suede in sand tones.']]},
- {id:5,name:'Cuero Nocturno',img:M('YfBInBEDxJs'),ar:539/1400,
-  items:[
-   ['l4-coat','outerwear',1650,50,32,['XS','S','M','L'],'Gabardina de Cuero con Cinturón','Belted Leather Trench','Napa negra encerada, cinturón anudado y hombro estructurado.','Waxed black nappa, tie belt and structured shoulder.'],
-   ['l4-skirt','pants',620,50,72,['XS','S','M','L'],'Falda Midi de Cuero','Leather Midi Skirt','Corte recto a media pierna con abertura posterior.','Straight mid-calf cut with a back slit.'],
-   ['l4-boots','footwear',780,50,96,['35','36','37','38','39','40'],'Botín Punta Fina','Pointed Ankle Boot','Cuero negro, tacón bloque de 50 mm.','Black leather, 50 mm block heel.']]},
- {id:6,name:'Denim Ancho',img:M('wePLgr6wZHc'),ar:541/1400,
-  items:[
-   ['l6-tank','tops',140,52,27,['XS','S','M','L'],'Tank Acanalado WET','WET Ribbed Tank','Algodón acanalado con estampado frontal.','Ribbed cotton with front print.'],
-   ['l6-jeans','pants',390,50,64,['24','26','28','30','32'],'Jean Cargo Wide','Wide Cargo Jean','Denim lavado claro con bolsillos cargo laterales.','Light-wash denim with side cargo pockets.'],
-   ['l6-shoes','footwear',420,24,96,['35','36','37','38','39','40'],'Sneaker Retro Lila','Lilac Retro Sneaker','Gamuza y cuero en lila y blanco.','Suede and leather in lilac and white.']]},
- {id:7,name:'Contraste',img:M('fZE-hydbrng'),ar:529/1400,
-  items:[
-   ['l7-blazer','outerwear',890,35,32,['XS','S','M','L'],'Blazer Cruzado Negro','Black Double-Breasted Blazer','Lana negra con hombro marcado y largo a la cadera.','Black wool, sharp shoulder, hip length.'],
-   ['l7-pants','pants',460,55,72,['XS','S','M','L'],'Palazzo Blanco Óptico','Optic White Palazzo','Tiro alto y pierna extra amplia con caída fluida.','High rise, extra-wide fluid leg.'],
-   ['l7-heels','footwear',610,84,96,['35','36','37','38','39','40'],'Stiletto Charol','Patent Stiletto','Punta afilada y tacón de 100 mm.','Pointed toe, 100 mm heel.']]},
- {id:8,name:'Calle',img:M('13eaC9bFjGQ'),ar:511/1400,
-  items:[
-   ['l8-glasses','accessories',190,44,5,['U'],'Gafas Slim Negras','Slim Black Sunglasses','Montura rectangular delgada, lente UV400.','Slim rectangular frame, UV400 lens.'],
-   ['l8-tee','tops',150,46,26,['S','M','L','XL'],'Camiseta Boxy Logo','Boxy Logo Tee','Algodón de 260 gsm con estampado en pecho.','260 gsm cotton with chest print.'],
-   ['l8-shorts','pants',220,53,57,['S','M','L','XL'],'Short Nylon Técnico','Technical Nylon Short','Nylon liviano con logo bordado.','Lightweight nylon with embroidered logo.'],
-   ['l8-shoes','footwear',470,82,95,['39','40','41','42','43','44'],'Sneaker High Tricolor','Tricolor High-Top','Cuero en negro, blanco y rojo.','Leather in black, white and red.']]},
- {id:9,name:'Mini Denim',img:M('6DaWU_VZ6Xg'),ar:765/1400,
-  items:[
-   ['l9-tee','tops',150,70,26,['XS','S','M','L'],'Camiseta Lavada Grafito','Washed Graphite Tee','Algodón lavado a la piedra, corte boxy.','Stone-washed cotton, boxy cut.'],
-   ['l9-skirt','pants',260,66,46,['24','26','28','30'],'Mini Falda Denim','Denim Mini Skirt','Denim rígido con ruedo deshilachado.','Rigid denim with a frayed hem.'],
-   ['l9-bag','accessories',540,62,62,['U'],'Bolso Media Luna','Half-Moon Bag','Nylon negro con herrajes metálicos.','Black nylon with metal hardware.'],
-   ['l9-shoes','footwear',420,18,92,['35','36','37','38','39','40'],'Sneaker High Navy','Navy High-Top','Cuero en azul, blanco y rojo.','Leather in navy, white and red.']]},
- {id:10,name:'Blazer Noche',img:M('7bHYFyelqXM'),ar:542/1400,
-  items:[
-   ['l10-blazer','outerwear',980,40,30,['XS','S','M','L'],'Blazer Vestido Oversized','Oversized Blazer Dress','Blazer largo que se usa como vestido, solapa en pico.','Long blazer worn as a dress, peak lapel.'],
-   ['l10-heels','footwear',560,34,94,['35','36','37','38','39','40'],'Sandalia de Tiras','Strappy Sandal','Tiras finas de cuero y tacón de 90 mm.','Fine leather straps, 90 mm heel.']]}
 ];
 const TOTAL_LOOKS=26; // lanzamiento real
+// Personajes 02–26: siluetas hasta que lleguen sus frames
+for(let k=2;k<=TOTAL_LOOKS;k++) LOOKS.push({id:k,name:'',ph:true,ar:453/1000,img:`assets/akira/f${String([0,22,44,66,88,120,150][k%7]).padStart(3,'0')}.webp`,items:[]});
 LOOKS.forEach((L,i)=>{
   L.code='LOOK '+String(L.id).padStart(2,'0');
   L.items=L.items.map(a=>({id:a[0],cat:a[1],usd:a[2],x:a[3],y:a[4],sizes:a[5],name:{es:a[6],en:a[7]},desc:{es:a[8],en:a[9]},look:L}));
@@ -591,7 +549,7 @@ const PROD_DAYS=30;
 /* ================= I18N ================= */
 const T={
  es:{introH:'La colección del desfile, pieza por pieza.',introDate:'Preventa abierta · 16 de octubre',announce:'Preventa · Producción de <b>~30 días</b> + envío',menu:'Menú',collection:'Colección',theCollection:'La colección',chooseLook:'Elige tu look.',explore:'Ver piezas',shopLook:'Comprar el look',allPieces:'Todas las piezas.',searchPh:'Buscar pieza o look',popLbl:'Render del inflable · lo entrega el estudio',popTitle:'Una tienda que se infla donde menos la esperas.',popText:'Nuestra tienda itinerante e inflable recorre la ciudad. Pruébate la colección en persona, ve las piezas del desfile y aparta tu preventa.',ecosystem:'Ecosistema',collTitle:'Nuestros colectivos.',coll1:'Diseño, render y dirección visual detrás de cada look.',coll2:'El sonido del desfile y los proyectos musicales del colectivo.',coll3:'La tienda de siempre: colecciones disponibles con entrega inmediata en Colombia.',visit:'Visitar',footP:'Colección Runway 2026. Todas las piezas se venden en preventa y se producen bajo pedido.',shop:'Tienda',help:'Ayuda',collectives:'Colectivos',pPre:'Preventa',pShip:'Envíos',pRet:'Cambios y devoluciones',pSize:'Guía de tallas',pTerms:'Términos y condiciones',pPriv:'Privacidad',
-  looksOf:(n,t)=>`${n} / ${t} looks`,lookCount:(s,t)=>`${s} de ${t} looks cargados en el prototipo`,pieces:n=>`${n} piezas`,lookTotal:p=>`Look completo · ${p}`,drag:'Arrastra para girar',spin:'Girar',stop:'Pausa',no360:'Vista frontal',try360:'Prueba el giro 360° en el',loading:'Cargando giro',
+  looksOf:(n,t)=>`${n} / ${t} looks`,lookCount:(s,t)=>`${s} de ${t} looks cargados en el prototipo`,pieces:n=>`${n} piezas`,lookTotal:p=>`Look completo · ${p}`,drag:'Arrastra para girar',spin:'Girar',stop:'Pausa',no360:'Vista frontal',try360:'Prueba el giro 360° en el',soon:'Próximamente',soonTxt:'Personaje en producción',soonRot:'Frames en producción',inProd:'en producción',loading:'Cargando giro',
   all:'Todo',cats:{outerwear:'Chaquetas',tops:'Tops',pants:'Pantalones',footwear:'Calzado',accessories:'Accesorios'},noResults:'No encontramos piezas con esa búsqueda.',
   preorder:'Preventa',preTxt:d=>`Se produce bajo pedido: ~${PROD_DAYS} días de producción + envío. Despacho estimado desde el <strong>${d}</strong>.`,size:'Talla',sizeGuide:'Guía de tallas',qty:'Cantidad',add:'Agregar a la bolsa · Preventa',pickSize:'Elige una talla para continuar.',details:'Detalles',shipRet:'Envíos y cambios',complete:'Completa el look',ofLook:'del',photoPending:'Foto de la pieza sola · pendiente',
   bag:'Tu bolsa',empty:'Tu bolsa está vacía.',keep:'Seguir explorando',remove:'Quitar',subtotal:'Subtotal',shipping:'Envío',insurance:'Seguro de envío',total:'Total estimado',checkout:'Ir a pagar',zone:'Destino',dutiesNote:'<b>Impuestos y aranceles</b> de importación no están incluidos y los paga quien recibe al momento de la entrega.',coShipNote:'<b>Envío nacional</b> calculado en el checkout según ciudad.',preNote:'Todas las piezas son <b>preventa</b>: se cobran hoy y se despachan al terminar producción.',added:n=>`${n} en tu bolsa`,addedN:n=>`${n} piezas agregadas`,
@@ -599,7 +557,7 @@ const T={
   menuLooks:'Looks',menuColl:'Colección',menuPop:'Pop-up',menuColls:'Colectivos',menuPolicies:'Políticas',menuContact:'Contacto',policies:'Políticas',
   geoCO:'Parece que estás en Colombia.',geoINTL:'It looks like you are outside Colombia.',checkTitle:'Checkout de Shopify',checkTxt:'Aquí el cliente sale al checkout nativo de Shopify con la bolsa armada (cart permalink). Pasarelas por mercado:',back:'Volver a la tienda',zones:{na:'Estados Unidos y Canadá',eu:'Europa',la:'Latinoamérica',ro:'Resto del mundo'}},
  en:{introH:'The runway collection, piece by piece.',introDate:'Pre-order opens · October 16',announce:'Pre-order · <b>~30-day</b> production + shipping',menu:'Menu',collection:'Collection',theCollection:'The collection',chooseLook:'Choose your look.',explore:'View pieces',shopLook:'Shop the look',allPieces:'Every piece.',searchPh:'Search a piece or look',popLbl:'Inflatable render · supplied by the studio',popTitle:'A store that inflates where you least expect it.',popText:'Our travelling inflatable store tours the city. Try the collection on, see the runway pieces up close and place your pre-order.',ecosystem:'Ecosystem',collTitle:'Our collectives.',coll1:'Design, rendering and visual direction behind every look.',coll2:'The sound of the show and the collective’s music projects.',coll3:'Our everyday store: collections in stock, delivered across Colombia.',visit:'Visit',footP:'Runway 2026 collection. Every piece is sold on pre-order and made to order.',shop:'Shop',help:'Help',collectives:'Collectives',pPre:'Pre-order',pShip:'Shipping',pRet:'Returns & exchanges',pSize:'Size guide',pTerms:'Terms & conditions',pPriv:'Privacy',
-  looksOf:(n,t)=>`${n} / ${t} looks`,lookCount:(s,t)=>`${s} of ${t} looks loaded in this prototype`,pieces:n=>`${n} pieces`,lookTotal:p=>`Full look · ${p}`,drag:'Drag to rotate',spin:'Spin',stop:'Pause',no360:'Front view',try360:'Try the 360° spin on',loading:'Loading spin',
+  looksOf:(n,t)=>`${n} / ${t} looks`,lookCount:(s,t)=>`${s} of ${t} looks loaded in this prototype`,pieces:n=>`${n} pieces`,lookTotal:p=>`Full look · ${p}`,drag:'Drag to rotate',spin:'Spin',stop:'Pause',no360:'Front view',try360:'Try the 360° spin on',soon:'Coming soon',soonTxt:'Character in production',soonRot:'Frames in production',inProd:'in production',loading:'Loading spin',
   all:'All',cats:{outerwear:'Outerwear',tops:'Tops',pants:'Trousers',footwear:'Footwear',accessories:'Accessories'},noResults:'No pieces match your search.',
   preorder:'Pre-order',preTxt:d=>`Made to order: ~${PROD_DAYS} days of production + shipping. Estimated dispatch from <strong>${d}</strong>.`,size:'Size',sizeGuide:'Size guide',qty:'Quantity',add:'Add to bag · Pre-order',pickSize:'Choose a size to continue.',details:'Details',shipRet:'Shipping & returns',complete:'Complete the look',ofLook:'from',photoPending:'Single-piece photo · pending',
   bag:'Your bag',empty:'Your bag is empty.',keep:'Keep exploring',remove:'Remove',subtotal:'Subtotal',shipping:'Shipping',insurance:'Shipping insurance',total:'Estimated total',checkout:'Checkout',zone:'Destination',dutiesNote:'<b>Import duties and taxes</b> are not included and are paid by the recipient on delivery.',coShipNote:'<b>Domestic shipping</b> calculated at checkout.',preNote:'Every piece is a <b>pre-order</b>: charged today, shipped when production is complete.',added:n=>`${n} added to your bag`,addedN:n=>`${n} pieces added`,
@@ -638,7 +596,7 @@ function figureInner(L,frame=0){
   // velo sobre el control de reproductor que quedó grabado en las capturas de referencia
   const veil=L.cover?`<span class="veil" style="left:${L.cover.x}%;top:${L.cover.y}%;width:${L.cover.s}%"></span>`:'';
   if(L.frames) return `<img class="photo" src="${L.frameSrc[frame]}" alt="${L.code} · ${esc(L.name)}" draggable="false">${veil}`;
-  return `<img class="photo" src="${L.img}" alt="${L.code} · ${esc(L.name)}" draggable="false" decoding="async">`;
+  return L.ph ? `<img class="photo ph" src="${L.img}" alt="" draggable="false" decoding="async">` : `<img class="photo" src="${L.img}" alt="${L.code} · ${esc(L.name)}" draggable="false" decoding="async">`;
 }
 /* Recorte de la pieza a partir del look (placeholder hasta tener la foto de la pieza sola) */
 function pieceCrop(it,zoom=1){
@@ -696,14 +654,16 @@ function renderInfo(animate=false){
   const Lk=look();
   const fill=()=>{
     $('#lookNum').textContent=t('looksOf')(Lk.code,TOTAL_LOOKS);
-    $('#lookTitle').textContent=Lk.name;
+    $('#lookTitle').textContent=Lk.ph?t('soon'):Lk.name;
+    $('.cta').style.visibility=Lk.ph?'hidden':'';
+    if(Lk.ph){$('#pieces').innerHTML=`<span class="none" style="font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)">${t('soonTxt')}</span>`;$('#totalLook').textContent='';return}
     $('#pieces').innerHTML=Lk.items.map(it=>`<button class="chip" data-act="product" data-id="${it.id}">${esc(nm(it))}<b>${money(it.usd)}</b></button>`).join('');
     $('#totalLook').textContent=t('lookTotal')(money(Lk.items.reduce((s,it)=>s+it.usd,0)));
   };
   const box=$('#lookText');
   if(animate){box.classList.add('out');clearTimeout(renderInfo.t);renderInfo.t=setTimeout(()=>{fill();box.classList.remove('out')},220)}else fill();
-  $('#idx').innerHTML=LOOKS.map((l,i)=>`<button data-act="look" data-i="${i}" aria-current="${i===S.i}" aria-label="${l.code}">${String(l.id).padStart(2,'0')}${l.frames?'<sup>360</sup>':''}</button>`).join('')+`<span class="more">+${TOTAL_LOOKS-LOOKS.length}</span>`;
-  $('#lookCountTxt').textContent=t('lookCount')(LOOKS.length,TOTAL_LOOKS);
+  $('#idx').innerHTML=LOOKS.map((l,i)=>l.ph?'':`<button data-act="look" data-i="${i}" aria-current="${i===S.i}" aria-label="${l.code}">${String(l.id).padStart(2,'0')}${l.frames?'<sup>360</sup>':''}</button>`).join('')+`<span class="more">+${LOOKS.filter(l=>l.ph).length} ${t('inProd')}</span>`;
+  $('#lookCountTxt').textContent=t('lookCount')(LOOKS.filter(l=>!l.ph).length,TOTAL_LOOKS);
   renderRot();
 }
 function renderRot(){
@@ -715,7 +675,7 @@ function renderRot(){
     $('#rng').addEventListener('input',e=>{stopSpin();setFrame(+e.target.value)});
   } else {
     const d=LOOKS.findIndex(l=>l.frames);
-    $('#rot').innerHTML=`<span class="none">${t('no360')}</span>${d>=0?`<button class="play" data-act="look" data-i="${d}"><svg class="icon" style="width:13px;height:13px"><use href="#i-rotate"/></svg>${t('try360')} ${LOOKS[d].code}</button>`:''}`;
+    $('#rot').innerHTML=`<span class="none">${Lk.ph?t('soonRot'):t('no360')}</span>${d>=0?`<button class="play" data-act="look" data-i="${d}"><svg class="icon" style="width:13px;height:13px"><use href="#i-rotate"/></svg>${t('try360')} ${LOOKS[d].code}</button>`:''}`;
   }
 }
 const frameLabel=Lk=>Lk.seq?`${String(S.frame+1).padStart(3,'0')}/${Lk.frames}`:Math.round(S.frame*360/Lk.frames)+'°';
@@ -919,7 +879,7 @@ function openCheckout(){
 
 /* menu */
 function openMenu(){
-  openDrawer('EFE',`<nav class="mnav">
+  openDrawer('Shopefecto',`<nav class="mnav">
     <button data-act="goto" data-to="showroom">${t('menuLooks')}<span class="sub">${TOTAL_LOOKS}</span></button>
     <button data-act="goto" data-to="coleccion">${t('menuColl')}<span class="sub">${PRODUCTS.size}+</span></button>
     ${Object.entries(t('cats')).map(([k,v])=>`<button data-act="gotoCat" data-c="${k}" style="font-size:18px;padding-left:16px;color:#4a473f">${v}</button>`).join('')}
@@ -1026,7 +986,7 @@ function openRoadmap(){
     3. <b>Pasarela internacional no aprobada</b> → el sitio internacional abre como lookbook con lista de espera hasta tener pasarela.<br>
     4. <b>Más looks o interacciones de las acordadas</b> → pasan a fase 2 (Plan C).</p>
   </div>
-  <p class="note" style="margin-top:30px">El Look 01 (AKIRA) usa los 170 frames reales del estudio: giro completo + animación de capucha, fondo recortado y optimizado a WebP. Los demás looks usan fotos libres de Unsplash con el fondo recortado, solo para ilustrar; en producción van los frames de cada personaje. Precios de ejemplo.</p>
+  <p class="note" style="margin-top:30px">El Look 01 (AKIRA) usa los 170 frames reales del estudio: giro completo + animación de capucha, fondo recortado y optimizado a WebP. Los otros 25 personajes aparecen como siluetas hasta que lleguen sus frames. Precios de ejemplo.</p>
   </div>`;
   openDrawer('¿La logramos? · Notas LA REAL',body,{cls:'wide'});
   $('#annSw').addEventListener('change',e=>{document.body.classList.toggle('ann',e.target.checked);write('efe-ann',e.target.checked)});
@@ -1073,8 +1033,8 @@ document.addEventListener('click',e=>{
       const it=PRODUCTS.get(id);
       if(!S.pickedSize){$('#sizeErr').textContent=t('pickSize');$('.sizes').animate([{transform:'translateX(-4px)'},{transform:'translateX(4px)'},{transform:'none'}],{duration:220});return}
       addToCart(id,S.pickedSize,S.qty); dlg.close(); toast(t('added')(nm(it))); break;}
-    case 'pieceSheet': openProduct(look().items[0].id); break;
-    case 'shopLook': openShopLook(); break;
+    case 'pieceSheet': if(look().items.length) openProduct(look().items[0].id); break;
+    case 'shopLook': if(look().items.length) openShopLook(); break;
     case 'lpOn': S.lookPick[id].on=b.checked; renderShopLook(); break;
     case 'lpSize': S.lookPick[id].size=b.dataset.s; S.lookPick[id].on=true; renderShopLook(); break;
     case 'lpAdd': {const sel=look().items.filter(it=>S.lookPick[it.id].on&&S.lookPick[it.id].size);sel.forEach(it=>addToCart(it.id,S.lookPick[it.id].size,1));dlg.close();toast(t('addedN')(sel.length));setTimeout(openCart,350);break;}
